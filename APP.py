@@ -23,9 +23,6 @@ def eth_time_series_analysis():
 @app.route('/api/ada')
 def ada_time_series_analysis():
     url = 'ADA.csv'
-    file_id = '1rZNDKmnyN9rdLbT3DIzAinkGODuzGNjB'
-    file = drive.CreateFile({'id': file_id})
-    file.GetContentFile(url)
     ada_forecast = pd.read_csv(url)
     response = jsonify(ada_forecast.to_dict(orient='records'))
     return response
