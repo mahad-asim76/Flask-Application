@@ -6,7 +6,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
+@app.route('/btc')
 def btc_time_series_analysis():
     url = 'BTC.csv'
     btc_forecast = pd.read_csv(url)
